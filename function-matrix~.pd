@@ -1,0 +1,444 @@
+#N canvas 0 25 1920 966 12;
+#X obj 309 230 pluck-and-duck~;
+#X obj 773 230 pluck-and-duck~;
+#X obj 1246 230 pluck-and-duck~;
+#X obj 1730 230 pluck-and-duck~;
+#X obj 309 1112 pluck-and-duck~;
+#X obj 773 1112 pluck-and-duck~;
+#X obj 1246 1112 pluck-and-duck~;
+#X obj 1730 1112 pluck-and-duck~;
+#X obj 309 1994 pluck-and-duck~;
+#X obj 773 1994 pluck-and-duck~;
+#X obj 1246 1994 pluck-and-duck~;
+#X obj 1730 1994 pluck-and-duck~;
+#X obj 309 2876 pluck-and-duck~;
+#X obj 773 2876 pluck-and-duck~;
+#X obj 1246 2876 pluck-and-duck~;
+#X obj 1730 2876 pluck-and-duck~;
+#X obj 309 -652 pluck-and-duck~;
+#X obj 773 -652 pluck-and-duck~;
+#X obj 1246 -652 pluck-and-duck~;
+#X obj 1730 -652 pluck-and-duck~;
+#X obj 2443 230 pluck-and-duck~;
+#X obj 2443 1112 pluck-and-duck~;
+#X obj 2443 1994 pluck-and-duck~;
+#X obj 2443 2876 pluck-and-duck~;
+#X obj 12 -712 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 12 -759 loadbang;
+#X obj 12 -666 delay 1;
+#X obj 112 -625 s loadbang;
+#X obj 12 -624 s loadbang1;
+#X text 33 -713 Initialize;
+#X obj 2443 -652 pluck-and-duck~;
+#X obj 2916 -65 dac~;
+#X text 245 -644 Inputs→;
+#X text 2471 208 Outputs↓;
+#X text 236 237 Matrix↓→;
+#X text 2469 -676 Master Output↓;
+#X obj 2916 -104 clip~ -0.1 0.1;
+#X text 3024 -105 This is to prevent Pure Data to blow my speakers.
+Adjust to your own system.;
+#X msg 309 -102 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 722 -13 t a;
+#X msg 773 -102 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 1186 -13 t a;
+#X msg 43 -467 save-preset;
+#X msg 53 -384 load-preset;
+#X msg 63 -291 init-preset;
+#X text 19 -500 Global preset control;
+#X obj 40 -237 s \$0-ui;
+#X obj 722 -681 r \$0-ui;
+#X obj 1186 -681 r \$0-ui;
+#X msg 1246 -102 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display
+0 \, channel 1;
+#X obj 1659 -13 t a;
+#X msg 1730 -102 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display
+0 \, channel 1;
+#X obj 2143 -13 t a;
+#X msg 2443 -102 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.5 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display
+0 \, channel 1;
+#X obj 2856 -13 t a;
+#X obj 63 -320 r loadbang;
+#X obj 1659 -681 r \$0-ui;
+#X obj 2143 -681 r \$0-ui;
+#X obj 2856 -681 r \$0-ui;
+#X msg 309 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.82 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 722 869 t a;
+#X msg 773 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter -0.8 \, vca-mix 1 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 1186 869 t a;
+#X obj 722 201 r \$0-ui;
+#X obj 1186 201 r \$0-ui;
+#X msg 1246 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 1659 869 t a;
+#X msg 1730 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+1;
+#X msg 2443 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
+1;
+#X obj 2856 869 t a;
+#X obj 1659 201 r \$0-ui;
+#X obj 2143 201 r \$0-ui;
+#X obj 2856 201 r \$0-ui;
+#X obj 2143 869 t a;
+#X msg 309 1662 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 722 1751 t a;
+#X msg 773 1662 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 1186 1751 t a;
+#X obj 722 1083 r \$0-ui;
+#X obj 1186 1083 r \$0-ui;
+#X msg 1246 1662 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X obj 1659 1751 t a;
+#X msg 1730 1662 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X msg 2443 1662 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X obj 2856 1751 t a;
+#X obj 1659 1083 r \$0-ui;
+#X obj 2143 1083 r \$0-ui;
+#X obj 2856 1083 r \$0-ui;
+#X obj 2143 1751 t a;
+#X msg 309 2544 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 722 2633 t a;
+#X msg 773 2544 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 1186 2633 t a;
+#X obj 722 1965 r \$0-ui;
+#X obj 1186 1965 r \$0-ui;
+#X msg 1246 2544 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X obj 1659 2633 t a;
+#X msg 1730 2544 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X msg 2443 2544 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X obj 2856 2633 t a;
+#X obj 1659 1965 r \$0-ui;
+#X obj 2143 1965 r \$0-ui;
+#X obj 2856 1965 r \$0-ui;
+#X obj 2143 2633 t a;
+#X msg 309 3426 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 722 3515 t a;
+#X msg 773 3426 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
+0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
+\, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
+saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0;
+#X obj 1186 3515 t a;
+#X obj 722 2847 r \$0-ui;
+#X obj 1186 2847 r \$0-ui;
+#X msg 1246 3426 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X obj 1659 3515 t a;
+#X msg 1730 3426 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 0;
+#X msg 2443 3426 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \,
+rfs-smooth 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1
+\, decay 0.5 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \,
+vca-mix 0 \, saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8
+\, output-gain 0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display
+0 \, channel 1;
+#X obj 2856 3515 t a;
+#X obj 1659 2847 r \$0-ui;
+#X obj 2143 2847 r \$0-ui;
+#X obj 2856 2847 r \$0-ui;
+#X obj 2143 3515 t a;
+#X obj 53 -413 r loadbang1;
+#X msg 1074 -904 pd~ stop;
+#X obj 1057 -827 print techno~;
+#X obj 1057 -868 pd~ -ninsig 0 -noutsig 4;
+#X obj 1019 -1041 r loadbang1;
+#X obj 948 -927 tgl 17 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 970 -927 DSP on/off;
+#X msg 948 -902 pd dsp \$1;
+#X msg 1057 -927 pd~ start techno~.pd;
+#X msg 947 -956 1;
+#X obj 1019 -1016 t b b;
+#X obj 1019 -991 delay 1000;
+#X obj 842 -1018 receive pd-dsp-started;
+#X obj 2156 760 +~;
+#X obj 2156 1642 +~;
+#X obj 2156 2524 +~;
+#X obj 2156 3406 +~;
+#X obj 2879 780 throw~ \$0-master-out~;
+#X obj 2879 1662 throw~ \$0-master-out~;
+#X obj 2879 2543 throw~ \$0-master-out~;
+#X obj 2460 -701 catch~ \$0-master-out~;
+#X obj 2879 3425 throw~ \$0-master-out~;
+#X text 3035 778 Using an Sum Bus for the Out Chain instead of actually
+chaining them together via Output Chain Out -> Output Chain In. This
+allows to switch off unused channels that would be used only just as
+a pass-through to reduce PD's CPU usage.;
+#X connect 0 0 59 0;
+#X connect 0 1 4 1;
+#X connect 0 3 1 4;
+#X connect 0 5 132 0;
+#X connect 1 0 61 0;
+#X connect 1 1 5 1;
+#X connect 1 5 132 0;
+#X connect 2 0 65 0;
+#X connect 2 1 6 1;
+#X connect 2 5 132 0;
+#X connect 3 0 67 0;
+#X connect 3 1 7 1;
+#X connect 3 5 132 0;
+#X connect 4 0 74 0;
+#X connect 4 1 8 1;
+#X connect 4 5 133 0;
+#X connect 5 0 76 0;
+#X connect 5 1 9 1;
+#X connect 5 5 133 0;
+#X connect 6 0 80 0;
+#X connect 6 1 10 1;
+#X connect 6 5 133 0;
+#X connect 7 0 82 0;
+#X connect 7 1 11 1;
+#X connect 7 5 133 0;
+#X connect 8 0 89 0;
+#X connect 8 1 12 1;
+#X connect 8 5 134 0;
+#X connect 9 0 91 0;
+#X connect 9 1 13 1;
+#X connect 9 5 134 0;
+#X connect 10 0 95 0;
+#X connect 10 1 14 1;
+#X connect 10 5 134 0;
+#X connect 11 0 97 0;
+#X connect 11 1 15 1;
+#X connect 11 5 134 0;
+#X connect 12 0 104 0;
+#X connect 12 5 135 0;
+#X connect 13 0 106 0;
+#X connect 13 5 135 0;
+#X connect 14 0 110 0;
+#X connect 14 5 135 0;
+#X connect 15 0 112 0;
+#X connect 15 5 135 0;
+#X connect 16 0 38 0;
+#X connect 16 5 0 1;
+#X connect 17 0 40 0;
+#X connect 17 5 1 1;
+#X connect 18 0 49 0;
+#X connect 18 5 2 1;
+#X connect 19 0 51 0;
+#X connect 19 5 3 1;
+#X connect 20 0 68 0;
+#X connect 20 5 136 0;
+#X connect 21 0 83 0;
+#X connect 21 5 137 0;
+#X connect 22 0 98 0;
+#X connect 22 5 138 0;
+#X connect 23 0 113 0;
+#X connect 23 5 140 0;
+#X connect 24 0 26 0;
+#X connect 24 0 27 0;
+#X connect 25 0 24 0;
+#X connect 26 0 28 0;
+#X connect 30 0 53 0;
+#X connect 30 5 36 0;
+#X connect 36 0 31 0;
+#X connect 36 0 31 1;
+#X connect 38 0 39 0;
+#X connect 39 0 16 23;
+#X connect 40 0 41 0;
+#X connect 41 0 17 23;
+#X connect 42 0 46 0;
+#X connect 43 0 46 0;
+#X connect 44 0 46 0;
+#X connect 47 0 16 23;
+#X connect 48 0 17 23;
+#X connect 49 0 50 0;
+#X connect 50 0 18 23;
+#X connect 51 0 52 0;
+#X connect 52 0 19 23;
+#X connect 53 0 54 0;
+#X connect 54 0 30 23;
+#X connect 55 0 44 0;
+#X connect 56 0 18 23;
+#X connect 57 0 19 23;
+#X connect 58 0 30 23;
+#X connect 59 0 60 0;
+#X connect 60 0 0 23;
+#X connect 61 0 62 0;
+#X connect 62 0 1 23;
+#X connect 63 0 0 23;
+#X connect 64 0 1 23;
+#X connect 65 0 66 0;
+#X connect 66 0 2 23;
+#X connect 67 0 73 0;
+#X connect 68 0 69 0;
+#X connect 69 0 20 23;
+#X connect 70 0 2 23;
+#X connect 71 0 3 23;
+#X connect 72 0 20 23;
+#X connect 73 0 3 23;
+#X connect 74 0 75 0;
+#X connect 75 0 4 23;
+#X connect 76 0 77 0;
+#X connect 77 0 5 23;
+#X connect 78 0 4 23;
+#X connect 79 0 5 23;
+#X connect 80 0 81 0;
+#X connect 81 0 6 23;
+#X connect 82 0 88 0;
+#X connect 83 0 84 0;
+#X connect 84 0 21 23;
+#X connect 85 0 6 23;
+#X connect 86 0 7 23;
+#X connect 87 0 21 23;
+#X connect 88 0 7 23;
+#X connect 89 0 90 0;
+#X connect 90 0 8 23;
+#X connect 91 0 92 0;
+#X connect 92 0 9 23;
+#X connect 93 0 8 23;
+#X connect 94 0 9 23;
+#X connect 95 0 96 0;
+#X connect 96 0 10 23;
+#X connect 97 0 103 0;
+#X connect 98 0 99 0;
+#X connect 99 0 22 23;
+#X connect 100 0 10 23;
+#X connect 101 0 11 23;
+#X connect 102 0 22 23;
+#X connect 103 0 11 23;
+#X connect 104 0 105 0;
+#X connect 105 0 12 23;
+#X connect 106 0 107 0;
+#X connect 107 0 13 23;
+#X connect 108 0 12 23;
+#X connect 109 0 13 23;
+#X connect 110 0 111 0;
+#X connect 111 0 14 23;
+#X connect 112 0 118 0;
+#X connect 113 0 114 0;
+#X connect 114 0 23 23;
+#X connect 115 0 14 23;
+#X connect 116 0 15 23;
+#X connect 117 0 23 23;
+#X connect 118 0 15 23;
+#X connect 119 0 43 0;
+#X connect 120 0 122 0;
+#X connect 122 0 121 0;
+#X connect 122 1 16 2;
+#X connect 122 2 17 2;
+#X connect 122 3 18 2;
+#X connect 122 4 19 2;
+#X connect 123 0 129 0;
+#X connect 124 0 126 0;
+#X connect 126 0 122 0;
+#X connect 127 0 122 0;
+#X connect 128 0 124 0;
+#X connect 129 0 130 0;
+#X connect 129 1 127 0;
+#X connect 130 0 128 0;
+#X connect 131 0 128 0;
+#X connect 132 0 20 1;
+#X connect 133 0 21 1;
+#X connect 134 0 22 1;
+#X connect 135 0 23 1;
+#X connect 139 0 30 1;
+#X coords 0 966 1 965 85 60 0;
