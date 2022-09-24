@@ -112,7 +112,7 @@ saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
 \, attack-decay 0 \, reshape 0 \, attenuverter 0.8 \, vca-mix 0 \,
 saturator-gain 0.6 \, saturator-mix 0 \, send-gain 0.8 \, output-gain
-0.8 \, input2-inv 1 \, wet-inv 0 \, mute 1 \, display 0 \, channel
+0.8 \, input2-inv 1 \, wet-inv 0 \, mute 0 \, display 0 \, channel
 1;
 #X msg 2443 780 input2-mix 0 \, pre-gain 0.8 \, clip-silence 0 \, rfs-smooth
 0 \, threshold 0.5 \, ratio 0.6 \, knee 0 \, attack -0.1 \, decay 0.5
